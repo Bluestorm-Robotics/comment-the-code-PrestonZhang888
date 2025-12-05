@@ -23,7 +23,7 @@
 // 
 // Author: Preston Zhang
 // Date:  12/5/2025
-// AI:  Yes / No I used AI to help me with this assignment.
+// AI:  No, I didn't use AI to help me with this assignment.
 // ============================================
 
 // ======Hardware Objects=======
