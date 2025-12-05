@@ -14,24 +14,25 @@
   * Save this file (Ctrl+S on PC, Cmd+S on Mac)
   * Commit your changes using VS Code's Source Control panel
   * 4. Push your changes to GitHub
+*/
 
-
-The Uncommented Code:
+//The Uncommented Code:
 
 // ============================================
 // YOUR NAME AND DATE GO HERE (uncomment and edit the line below):
 // 
-// Author: Your Name Here
-// Date:   Today's Date Here
+// Author: Preston Zhang
+// Date:  12/5/2025
 // AI:  Yes / No I used AI to help me with this assignment.
 // ============================================
 
-#include <Zumo32U4.h>
+// ======Hardware Objects=======
+#include <Zumo32U4.h> 
  
-Zumo32U4ButtonA buttonA;
-Zumo32U4ButtonB buttonB;
-Zumo32U4ButtonC buttonC;
-Zumo32U4OLED display;
+Zumo32U4ButtonA buttonA;  //Create Button A object
+Zumo32U4ButtonB buttonB;  //Create Button B object
+Zumo32U4ButtonC buttonC;  //Create Button C object
+Zumo32U4OLED display;     //Create display object
  
 int mode = 0;
  
@@ -55,18 +56,18 @@ void showMode() {
     display.print(F("A:- B:+ C:Reset"));
 }
  
-void setup() {
-    Serial.begin(115200);
+void setup() {     //Done Once
+    Serial.begin(115200);    
     Serial.println(F("Mode Selector"));
     showMode();
 }
  
-void loop() {
-    if (buttonA.getSingleDebouncedPress()) {
+void loop() {       //Repeats Infinitely
+    if (buttonA.getSingleDebouncedPress()) {   //Waits for Button A to be pressed, then proceeds with the following code
         if (mode > 0) {
             mode--;
         }
-        ledYellow(1); delay(50); ledYellow(0);
+        ledYellow(1); delay(50); ledYellow(0); 
         showMode();
         Serial.print(F("Mode: ")); Serial.println(mode);
     }
